@@ -1,0 +1,17 @@
+<div
+  class="d-flex justify-content-end align-items-center bg-info p-2 bg-opacity-10"
+>
+  <% if(user) { %>
+  <p class="mb-0 me-3">
+    ユーザ名: <%= user.username %>　学生番号: <%= user.stNumber %>
+  </p>
+  <form action="/auth/logout" method="post">
+    <input
+      type="submit"
+      value="ログアウト"
+      id="submit"
+      class="alert alert-primary"
+    />
+  </form>
+  <% } %>
+</div>

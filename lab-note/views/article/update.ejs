@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <%- include('../meta'); -%>
+    <script src="/updateArticle.js" defer></script>
+  </head>
+  <body>
+    <%- include('../header'); -%> <%- include('./userInfo'); -%>
+    <div class="bg-primary p-2 text-dark bg-opacity-10 border">
+      <h2>記事の編集</h2>
+      <label for="title">タイトル</label>
+      <input
+        type="text"
+        name="title"
+        id="newTitle"
+        value="<%= article.article.title %>"
+      />
+      <label for="content">内容</label>
+      <input
+        type="text"
+        name="content"
+        size="80"
+        id="newContent"
+        value="<%= article.article.content %>"
+      />
+      <input
+        type="submit"
+        value="登録"
+        class="alert alert-primary"
+        onclick="updateArticle('<%= article.article.id %>')"
+      />
+      <h4 id="updatedAnnounceSpace" class="alert"></h4>
+    </div>
+    <%- include('../footer'); -%>
+  </body>
+</html>
